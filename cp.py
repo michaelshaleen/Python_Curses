@@ -9,17 +9,21 @@ def main(stdscr):
   curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_RED)
   MAGENTA_AND_YELLOW = curses.color_pair(1)
   CYAN_AND_RED = curses.color_pair(2)
+# height width row column of window within screen
+  counter_win = curses.newwin(1, 20, 10, 10)
+  stdscr.addstr("Within")
+  stdscr.refresh()
   
   for i in range(100):
-      stdscr.clear()
+      counter_win.clear()
       color = MAGENTA_AND_YELLOW
 
       if i % 2 == 0:
         color = CYAN_AND_RED
 
-      stdscr.addstr(f"Count: {i}", color)
-      stdscr.refresh()
-      time.sleep(0.75)
+      counter_win.addstr(f"Count: {i}", color)
+      counter_win.refresh()
+      time.sleep(0.1)
 
 
   stdscr.getch()
