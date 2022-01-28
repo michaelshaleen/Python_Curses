@@ -14,8 +14,12 @@ def main(stdscr):
 
 
   x, y = 0, 0
+  string_x = 0
   while True:
-    key = stdscr.getkey()
+    try:
+        key = stdscr.getkey()
+    except:
+        key = None
     if key == "KEY_LEFT":
       x -= 1
     elif key == "KEY_RIGHT":
@@ -27,6 +31,8 @@ def main(stdscr):
 
 
     stdscr.clear()
+    string_x += 1
+    stdscr.addstr(0, string_x//500, "Hello humans")
     stdscr.addstr(y, x, "X")
     stdscr.refresh()
     
