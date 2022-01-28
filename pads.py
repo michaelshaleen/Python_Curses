@@ -22,8 +22,12 @@ def main(stdscr):
 # pad relative to window
 # start at 0, 0 relative to pad, 5, 5, on screen pad will be
 # end 25, 75
-  pad.refresh(0, 0, 5, 5, 25, 75)
-  stdscr.getch()
+  for i in range(50):
+      stdscr.clear()
+      stdscr.refresh()
+      pad.refresh(0, 0, 5, i, 10, 25 + i)
+      time.sleep(0.2)
+      stdscr.getch()
   
 
 wrapper(main)
