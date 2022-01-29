@@ -18,6 +18,9 @@ def main(stdscr):
   stdscr.refresh()
 
   box.edit()
+  text = box.gather().strip().replace("\n", "")
+
+  stdscr.addstr(10, 40, text)
 
   stdscr.getch()
   # stdscr.nodelay(True)
