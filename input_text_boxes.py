@@ -11,8 +11,14 @@ def main(stdscr):
   MAGENTA_AND_YELLOW = curses.color_pair(1)
   CYAN_AND_RED = curses.color_pair(2)
 
-  rectangle(stdscr, 2, 2, 10, 20)
+  win = curses.newwin(3, 18, 2, 2)
+  box = Textbox(win)
+  rectangle(stdscr, 1, 1, 5, 20)
+
   stdscr.refresh()
+
+  box.edit()
+
   stdscr.getch()
   # stdscr.nodelay(True)
 
