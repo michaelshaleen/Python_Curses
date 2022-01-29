@@ -10,31 +10,36 @@ def main(stdscr):
   curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_RED)
   MAGENTA_AND_YELLOW = curses.color_pair(1)
   CYAN_AND_RED = curses.color_pair(2)
-  stdscr.nodelay(True)
+
+  rectangle(stdscr, 2, 2, 10, 20)
+  stdscr.refresh()
+  stdscr.getch()
+  # stdscr.nodelay(True)
 
 
-  x, y = 0, 0
-  string_x = 0
-  while True:
-    try:
-        key = stdscr.getkey()
-    except:
-        key = None
-    if key == "KEY_LEFT":
-      x -= 1
-    elif key == "KEY_RIGHT":
-      x += 1
-    elif key == "KEY_UP":
-      y -= 1 
-    elif key == "KEY_DOWN":
-      y += 1
+  # x, y = 0, 0
+  # string_x = 0
+  # while True:
+  #   try:
+  #       key = stdscr.getkey()
+  #   except:
+  #       key = None
+
+  #   if key == "KEY_LEFT":
+  #     x -= 1
+  #   elif key == "KEY_RIGHT":
+  #     x += 1
+  #   elif key == "KEY_UP":
+  #     y -= 1 
+  #   elif key == "KEY_DOWN":
+  #     y += 1
 
 
-    stdscr.clear()
-    string_x += 1
-    stdscr.addstr(0, string_x//500, "Hello humans")
-    stdscr.addstr(y, x, "X")
-    stdscr.refresh()
+  #   stdscr.clear()
+  #   string_x += 1
+  #   stdscr.addstr(0, string_x//500, "Hello humans")
+  #   stdscr.addstr(y, x, "X")
+  #   stdscr.refresh()
     
 
 # string in terminal, use getkey, string asks for input
